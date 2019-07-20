@@ -1,27 +1,33 @@
-# NgDebugPipes
+# ng-debug-pipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+## What is it? 🤔
 
-## Development server
+This started with a few old pipes I had lying around, and quickly turned into me playing around with Ivy.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These pipes are kind of useful on their own:
 
-## Code scaffolding
+**`DebugPipe`**:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```html
+{{ foo | debug }}
+```
 
-## Build
+**`ConsolePipe`**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```html
+{{ foo | console }}
+```
 
-## Running unit tests
+But the interesting thing here is the hack in `./projects/ng-debug-pipes/src/lib/global-pipe.ts`. It is *definitely* a hack, and very fragile, but it seems to enable you to use there pipes *anywhere in your application* without importing an `NgModule`! Even in a lazy loaded module!
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Running it 🏗
 
-## Running end-to-end tests
+1) `ng build ng-debug-pipes`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2) `ng serve test-pipes`
 
-## Further help
+## Caveats ⚠️
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Required the `"enableIvy": true` compiler option to be turned on.
+
+* Breaks if you have full template type checking on. So you need to have `"fullTemplateTypeCheck": false`.

@@ -6,6 +6,7 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -17,10 +18,18 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-debug-pipes": [
+        "projects/ng-debug-pipes/dist/ng-debug-pipes"
+      ],
+      "ng-debug-pipes/*": [
+        "projects/ng-debug-pipes/dist/ng-debug-pipes/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
+    "fullTemplateTypeCheck": false, // this being off is sad :(
     "strictInjectionParameters": true
   }
 }

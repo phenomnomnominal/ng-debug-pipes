@@ -9,18 +9,6 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -72,6 +60,7 @@
       true,
       "single"
     ],
+    "space-before-function-paren": [true, "always"],
     "trailing-comma": false,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
