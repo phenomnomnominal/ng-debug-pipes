@@ -40,21 +40,21 @@
     "test-pipes": {
       "projectType": "application",
       "schematics": {},
-      "root": ".",
-      "sourceRoot": "src",
+      "root": "projects/test-pipes",
+      "sourceRoot": "projects/test-pipes/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/test-pipes",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "index": "projects/test-pipes/src/index.html",
+            "main": "projects/test-pipes/src/main.ts",
+            "polyfills": "projects/test-pipes/src/polyfills.ts",
+            "tsConfig": "projects/test-pipes/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico"
+              "projects/test-pipes/src/favicon.ico"
             ],
             "scripts": []
           },
@@ -62,8 +62,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/test-pipes/src/environments/environment.ts",
+                  "with": "projects/test-pipes/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -100,8 +100,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
+              "projects/test-pipes/tsconfig.app.json",
+              "projects/test-pipes/tsconfig.spec.json",
+              "projects/test-pipes/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
